@@ -2,10 +2,9 @@ import mongoose from 'mongoose';
 
 const userSchema = mongoose.Schema(
   {
-    user: {
-      type: mongoose.Schema.Types.ObjectId,
+    name: {
+      type: String,
       required: true,
-      ref: 'User',
     },
     email: {
       type: String,

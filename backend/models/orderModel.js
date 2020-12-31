@@ -1,29 +1,18 @@
-import mongoose, { Mongoose } from 'mongoose';
+import mongoose from 'mongoose';
 
 const orderSchema = mongoose.Schema(
   {
-    name: {
-      type: String,
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
       required: true,
+      ref: 'User',
     },
     orderItems: [
       {
-        name: {
-          type: String,
-          required: true,
-        },
-        qty: {
-          type: Number,
-          required: true,
-        },
-        image: {
-          type: String,
-          required: true,
-        },
-        price: {
-          type: Number,
-          required: true,
-        },
+        name: { type: String, required: true },
+        qty: { type: Number, required: true },
+        image: { type: String, required: true },
+        price: { type: Number, required: true },
         product: {
           type: mongoose.Schema.Types.ObjectId,
           required: true,
@@ -32,27 +21,12 @@ const orderSchema = mongoose.Schema(
       },
     ],
     shippingAddress: {
-      address: {
-        type: String,
-        required: true,
-      },
-      city: {
-        type: String,
-        required: true,
-      },
-      postalCode: {
-        type: String,
-        required: true,
-      },
-      Country: {
-        type: String,
-        required: true,
-      },
+      address: { type: String, required: true },
+      city: { type: String, required: true },
+      postalCode: { type: String, required: true },
+      Country: { type: String, required: true },
     },
-    paymentMethod: {
-      type: String,
-      required: true,
-    },
+    paymentMethod: { type: String, required: true },
     paymentResult: {
       id: { type: String },
       status: { type: String },
