@@ -11,6 +11,9 @@ import connectDB from './config/db.js';
 dotenv.config();
 connectDB();
 
+/**
+ * @description Async function to import sample data to MongoDB
+ */
 const importData = async () => {
   try {
     await Order.deleteMany();
@@ -35,6 +38,9 @@ const importData = async () => {
   }
 };
 
+/**
+ * @description Async function to delete sample data from MongoDB
+ */
 const destroyData = async () => {
   try {
     await Order.deleteMany();
@@ -49,5 +55,8 @@ const destroyData = async () => {
   }
 };
 
-if (process.argv[2] === '-d') destroyData();
-else importData();
+if (process.argv[2] === '-d') {
+  destroyData();
+} else {
+  importData();
+}

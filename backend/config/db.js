@@ -1,5 +1,8 @@
 import mongoose from 'mongoose';
 
+/**
+ * @description Async funtion to connect to MongoDB Atlas
+ */
 const connectDB = async () => {
   try {
     const conn = await mongoose.connect(process.env.MONGO_URI, {
@@ -7,7 +10,6 @@ const connectDB = async () => {
       useNewUrlParser: true,
       useCreateIndex: true,
     });
-
     console.log(`MongoDB connected: ${conn.connection.host}`.cyan.underline);
   } catch (e) {
     console.error(`Error: ${e}`.red.underline.bold);
