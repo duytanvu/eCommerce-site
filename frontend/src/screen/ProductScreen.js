@@ -31,8 +31,8 @@ const ProductScreen = ({ match }) => {
             </ListGroup.Item>
             <ListGroup.Item>
               <Rating
-                value={product.rating}
-                text={`${product.numReviews} reviews`}
+                value={product.rating ? product.rating : 0}
+                text={`${product.numReviews ? product.numReviews : ''} reviews`}
               />
             </ListGroup.Item>
             <ListGroup.Item>Price: ${product.price}</ListGroup.Item>
