@@ -16,13 +16,13 @@ export const listProducts = () => async dispatch => {
       type: PRODUCT_LIST_SUCCESS,
       payload: data,
     });
-  } catch (err) {
+  } catch (error) {
     dispatch({
       type: PRODUCT_LIST_FAIL,
       payload:
-        err.response && err.response.data.message
-          ? err.response.data.message
-          : err.message,
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
     });
   }
 };
