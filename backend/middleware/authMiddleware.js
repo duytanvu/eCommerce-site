@@ -5,7 +5,7 @@ import User from '../models/userModel.js';
 const protect = asyncHandler(async (req, res, next) => {
   if (!req.headers.authorization) {
     res.status(401);
-    throw new Error('You are not authorized to access this page');
+    throw new Error('Not authorized, no token');
   } else {
     const [type, credentials] = req.headers.authorization.split(' ');
     if (type === 'Bearer') {
