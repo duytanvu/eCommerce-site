@@ -45,6 +45,7 @@ const OrderScreen = ({ match, history }) => {
     if (!userInfo) {
       history.push('/login');
     }
+
     const addPayPalScript = async () => {
       const { data: clientId } = await axios.get('/api/config/paypal');
       const script = document.createElement('script');
@@ -205,6 +206,7 @@ const OrderScreen = ({ match, history }) => {
               )}
 
               {loadingDeliver && <Loader />}
+
               {userInfo &&
                 userInfo.isAdmin &&
                 order.isPaid &&
