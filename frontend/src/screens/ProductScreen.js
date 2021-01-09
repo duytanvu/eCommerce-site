@@ -17,8 +17,8 @@ import Meta from '../components/Meta';
 import {
   listProductDetails,
   createProductReview,
-} from '../actions/productActions.js';
-import { addToCart } from '../actions/cartActions.js';
+} from '../actions/productActions';
+import { addToCart } from '../actions/cartActions';
 import { PRODUCT_CREATE_REVIEW_RESET } from '../constants/productConstants';
 
 const ProductScreen = ({ history, match }) => {
@@ -86,7 +86,7 @@ const ProductScreen = ({ history, match }) => {
             <Col md={3}>
               <ListGroup variant='flush'>
                 <ListGroup.Item>
-                  <h2>{product.name}</h2>
+                  <h3>{product.name}</h3>
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <Rating
@@ -98,7 +98,7 @@ const ProductScreen = ({ history, match }) => {
                 </ListGroup.Item>
                 <ListGroup.Item>Price: ${product.price}</ListGroup.Item>
                 <ListGroup.Item>
-                  Description: ${product.description}
+                  Description: {product.description}
                 </ListGroup.Item>
               </ListGroup>
             </Col>
@@ -117,7 +117,7 @@ const ProductScreen = ({ history, match }) => {
                     <Row>
                       <Col>Status:</Col>
                       <Col>
-                        {product.countInStock > 0 ? 'In stock' : 'Out of stock'}
+                        {product.countInStock > 0 ? 'In Stock' : 'Out Of Stock'}
                       </Col>
                     </Row>
                   </ListGroup.Item>
@@ -149,7 +149,7 @@ const ProductScreen = ({ history, match }) => {
                       disabled={product.countInStock === 0}
                       onClick={addToCartHandler}
                     >
-                      Add to cart
+                      Add To Cart
                     </Button>
                   </ListGroup.Item>
                 </ListGroup>
@@ -160,7 +160,7 @@ const ProductScreen = ({ history, match }) => {
           <Row>
             <Col md={6}>
               <h2>Reviews</h2>
-              {product.reviews.length === 0 && <Message>No Review</Message>}
+              {product.reviews.length === 0 && <Message>No Reviews</Message>}
               <ListGroup variant='flush'>
                 {product.reviews.map(review => (
                   <ListGroup.Item key={review._id}>
@@ -172,7 +172,7 @@ const ProductScreen = ({ history, match }) => {
                 ))}
 
                 <ListGroup.Item>
-                  <h2>Write a Customer Review:</h2>
+                  <h2>Write a Customer Review</h2>
                   {successProductReview && (
                     <Message variant='success'>
                       Review submitted successfully
@@ -220,7 +220,7 @@ const ProductScreen = ({ history, match }) => {
                     </Form>
                   ) : (
                     <Message>
-                      Please <Link to='/login'>sign in</Link> to write a review
+                      Please <Link to='/login'>sign in</Link> to write a review{' '}
                     </Message>
                   )}
                 </ListGroup.Item>

@@ -4,7 +4,7 @@ import {
   CART_SAVE_PAYMENT_METHOD,
   CART_SAVE_SHIPPING_ADDRESS,
   CART_CLEAR_ITEMS,
-} from '../constants/cartConstants.js';
+} from '../constants/cartConstants';
 
 export const cartReducer = (
   state = { cartItems: [], shippingAddress: {} },
@@ -20,7 +20,7 @@ export const cartReducer = (
         return {
           ...state,
           cartItems: state.cartItems.map(x =>
-            x.product === item.product ? item : x
+            x.product === existItem.product ? item : x
           ),
         };
       } else {

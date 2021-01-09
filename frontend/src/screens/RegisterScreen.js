@@ -92,7 +92,7 @@ const RegisterScreen = ({ location, history }) => {
         <Col>
           Have an account?{' '}
           <Link to={redirect ? `/login?redirect=${redirect}` : '/login'}>
-            Log In
+            Login
           </Link>
         </Col>
       </Row>

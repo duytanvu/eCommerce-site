@@ -19,7 +19,7 @@ const addOrderItems = asyncHandler(async (req, res) => {
 
   if (orderItems && orderItems.length === 0) {
     res.status(400);
-    throw new Error('No order Items');
+    throw new Error('No order items.');
   } else {
     const order = new Order({
       orderItems,
@@ -106,7 +106,7 @@ const updateOrderToDelivered = asyncHandler(async (req, res) => {
 
 /**
  * @description Get logged in user orders
- * @route       Get /api/orders/myorders
+ * @route       GET /api/orders/myorders
  * @access      Private
  */
 const getMyOrders = asyncHandler(async (req, res) => {

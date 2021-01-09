@@ -4,7 +4,7 @@ import { Table, Button } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
-import { listOrders } from '../actions/orderActions.js';
+import { listOrders } from '../actions/orderActions';
 
 const OrderListScreen = ({ history }) => {
   const dispatch = useDispatch();
@@ -65,7 +65,7 @@ const OrderListScreen = ({ history }) => {
                   )}
                 </td>
                 <td>
-                  <LinkContainer to={`/orders/${order._id}`}>
+                  <LinkContainer to={`/order/${order._id}`}>
                     <Button variant='light' className='btn-sm'>
                       Details
                     </Button>

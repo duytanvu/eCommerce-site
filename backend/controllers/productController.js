@@ -1,4 +1,3 @@
-import { response } from 'express';
 import asyncHandler from 'express-async-handler';
 import Product from '../models/productModel.js';
 
@@ -7,7 +6,7 @@ import Product from '../models/productModel.js';
  * @route       GET /api/products
  * @access      Public
  */
-const getProduct = asyncHandler(async (req, res) => {
+const getProducts = asyncHandler(async (req, res) => {
   const pageSize = 10;
   const page = +req.query.pageNumber || 1;
 
@@ -51,7 +50,7 @@ const deleteProduct = asyncHandler(async (req, res) => {
   const product = await Product.findById(req.params.id);
   if (product) {
     await product.remove();
-    res.json({ message: 'Product removed' });
+    res.json({ message: 'Product removed.' });
   } else {
     res.status(404);
     throw new Error('Product not found.');
@@ -69,11 +68,11 @@ const createProduct = asyncHandler(async (req, res) => {
     price: 0,
     user: req.user._id,
     image: './images/sample.jpg',
-    brand: 'Sample Brand',
+    brand: 'Sample brand',
     category: 'Sample category',
     countInStock: 0,
     numReviews: 0,
-    description: 'Sample Description',
+    description: 'Sample description',
   });
 
   const createdProduct = await product.save();
@@ -150,7 +149,7 @@ const createProductReview = asyncHandler(async (req, res) => {
     res.status(201).json({ message: 'Review added' });
   } else {
     res.status(404);
-    throw new Error('Product not found');
+    throw new Error('Product not found.');
   }
 });
 
@@ -165,7 +164,7 @@ const getTopProducts = asyncHandler(async (req, res) => {
 });
 
 export {
-  getProduct,
+  getProducts,
   getProductById,
   deleteProduct,
   createProduct,

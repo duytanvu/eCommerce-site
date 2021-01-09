@@ -63,6 +63,9 @@ export const login = (email, password) => async dispatch => {
 
 export const logout = () => dispatch => {
   localStorage.removeItem('userInfo');
+  localStorage.removeItem('cartItems');
+  localStorage.removeItem('shippingAddress');
+  localStorage.removeItem('paymentMethod');
   dispatch({ type: USER_LOGOUT });
   dispatch({ type: USER_DETAILS_RESET });
   dispatch({ type: ORDER_LIST_MY_RESET });
@@ -77,7 +80,7 @@ export const register = (name, email, password) => async dispatch => {
     });
 
     const config = {
-      header: {
+      headers: {
         'Content-Type': 'application/json',
       },
     };
@@ -121,7 +124,6 @@ export const getUserDetails = id => async (dispatch, getState) => {
 
     const config = {
       headers: {
-        'Content-Type': 'application/json',
         Authorization: `Bearer ${userInfo.token}`,
       },
     };
@@ -244,9 +246,7 @@ export const deleteUser = id => async (dispatch, getState) => {
 
     await axios.delete(`/api/users/${id}`, config);
 
-    dispatch({
-      type: USER_DELETE_SUCCESS,
-    });
+    dispatch({ type: USER_DELETE_SUCCESS });
   } catch (error) {
     const message =
       error.response && error.response.data.message
@@ -281,14 +281,11 @@ export const updateUser = user => async (dispatch, getState) => {
 
     const { data } = await axios.put(`/api/users/${user._id}`, user, config);
 
-    dispatch({
-      type: USER_UPDATE_SUCCESS,
-    });
+    dispatch({ type: USER_UPDATE_SUCCESS });
 
-    dispatch({
-      type: USER_DETAILS_SUCCESS,
-      payload: data,
-    });
+    dispatch({ type: USER_DETAILS_SUCCESS, payload: data });
+
+    dispatch({ type: USER_DETAILS_RESET });
   } catch (error) {
     const message =
       error.response && error.response.data.message

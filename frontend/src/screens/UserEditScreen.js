@@ -49,7 +49,7 @@ const UserEditScreen = ({ match, history }) => {
 
   return (
     <>
-      <Link to='/admin/userList' className='btn btn-light my-3'>
+      <Link to='/admin/userlist' className='btn btn-light my-3'>
         Go Back
       </Link>
       <FormContainer>
@@ -82,7 +82,7 @@ const UserEditScreen = ({ match, history }) => {
               ></Form.Control>
             </Form.Group>
 
-            <Form.Group controlId='isAdmin'>
+            <Form.Group controlId='isadmin'>
               <Form.Check
                 type='checkbox'
                 label='Is Admin'

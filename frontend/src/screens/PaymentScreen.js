@@ -3,13 +3,13 @@ import { Form, Button, Col } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import FormContainer from '../components/FormContainer';
 import CheckoutSteps from '../components/CheckoutSteps';
-import { savePaymentMethod } from '../actions/cartActions.js';
+import { savePaymentMethod } from '../actions/cartActions';
 
 const PaymentScreen = ({ history }) => {
   const cart = useSelector(state => state.cart);
   const { shippingAddress } = cart;
 
-  if (!shippingAddress) {
+  if (!shippingAddress.address) {
     history.push('/shipping');
   }
 

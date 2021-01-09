@@ -156,7 +156,7 @@ const ProductEditScreen = ({ match, history }) => {
               <Form.Label>Count In Stock</Form.Label>
               <Form.Control
                 type='number'
-                placeholder='Enter count in stock'
+                placeholder='Enter number of in stock products'
                 value={countInStock}
                 onChange={e => setCountInStock(e.target.value)}
               ></Form.Control>

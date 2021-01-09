@@ -4,21 +4,21 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
-import HomeScreen from './screen/HomeScreen';
-import ProductScreen from './screen/ProductScreen';
-import CartScreen from './screen/CartScreen';
-import LoginScreen from './screen/LoginScreen';
-import RegisterScreen from './screen/RegisterScreen';
-import ProfileScreen from './screen/ProfileScreen';
-import ShippingScreen from './screen/ShippingScreen';
-import PaymentScreen from './screen/PaymentScreen';
-import PlaceOrderScreen from './screen/PlaceOrderScreen';
-import OrderScreen from './screen/OrderScreen';
-import UserListScreen from './screen/UserListScreen';
-import UserEditScreen from './screen/UserEditScreen';
-import ProductListScreen from './screen/ProductListScreen';
-import ProductEditScreen from './screen/ProductEditScreen';
-import OrderListScreen from './screen/OrderListScreen';
+import HomeScreen from './screens/HomeScreen';
+import ProductScreen from './screens/ProductScreen';
+import CartScreen from './screens/CartScreen';
+import LoginScreen from './screens/LoginScreen';
+import RegisterScreen from './screens/RegisterScreen';
+import ProfileScreen from './screens/ProfileScreen';
+import ShippingScreen from './screens/ShippingScreen';
+import PaymentScreen from './screens/PaymentScreen';
+import PlaceOrderScreen from './screens/PlaceOrderScreen';
+import OrderScreen from './screens/OrderScreen';
+import UserListScreen from './screens/UserListScreen';
+import UserEditScreen from './screens/UserEditScreen';
+import ProductListScreen from './screens/ProductListScreen';
+import ProductEditScreen from './screens/ProductEditScreen';
+import OrderListScreen from './screens/OrderListScreen';
 
 const App = () => {
   return (
@@ -26,7 +26,7 @@ const App = () => {
       <Header />
       <main className='py-3'>
         <Container>
-          <Route path='/orders/:id' component={OrderScreen} />
+          <Route path='/order/:id' component={OrderScreen} />
           <Route path='/placeorder' component={PlaceOrderScreen} />
           <Route path='/shipping' component={ShippingScreen} />
           <Route path='/payment' component={PaymentScreen} />
@@ -34,7 +34,7 @@ const App = () => {
           <Route path='/register' component={RegisterScreen} />
           <Route path='/profile' component={ProfileScreen} />
           <Route path='/product/:id' component={ProductScreen} />
-          <Route path='/cart/:id?/' component={CartScreen} />
+          <Route path='/cart/:id?' component={CartScreen} />
           <Route path='/admin/orderlist' component={OrderListScreen} />
           <Route path='/admin/userlist' component={UserListScreen} />
           <Route path='/admin/user/:id/edit' component={UserEditScreen} />
@@ -49,7 +49,7 @@ const App = () => {
             exact
           />
           <Route path='/admin/product/:id/edit' component={ProductEditScreen} />
-          <Route path='/search/:keyword' component={HomeScreen} />
+          <Route path='/search/:keyword' component={HomeScreen} exact />
           <Route path='/page/:pageNumber' component={HomeScreen} exact />
           <Route
             path='/search/:keyword/page/:pageNumber'
