@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Form, Button } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
+import Meta from '../components/Meta';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
 import FormContainer from '../components/FormContainer';
@@ -93,6 +94,7 @@ const ProductEditScreen = ({ match, history }) => {
 
   return (
     <>
+      <Meta title='Edit Product' />
       <Link to='/admin/productlist' className='btn btn-light my-3'>
         Go Back
       </Link>
