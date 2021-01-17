@@ -71,6 +71,55 @@ const products = [
     rating: 0,
     numReviews: 0,
   },
+  {
+    name: 'Apple Watch Series 5 (GPS, 44MM)',
+    image: '/images/applewatch.jpg',
+    description:
+      'The most advanced Apple Watch yet, with a blood oxygen sensor and app, the ECG app and the Always-On Retina display.',
+    brand: 'Apple',
+    category: 'Electronics',
+    price: 349.99,
+    countInStock: 120,
+    rating: 0,
+    numReviews: 0,
+  },
+  {
+    name: 'Kindle Paperwhite',
+    image: '/images/kindle.jpg',
+    description:
+      'The thinnest, lightest Kindle Paperwhite yet—with a flush-front design and 300 ppi glare-free display that reads like real paper even in bright sunlight.',
+    brand: 'Amazon',
+    category: 'Electronics',
+    price: 139.99,
+    countInStock: 50,
+    rating: 0,
+    numReviews: 0,
+  },
+  {
+    name:
+      'LG UltraWide 34WN750-B 34 inch UltraWide QHD (3440 x 1440) IPS Monitor',
+    image: '/images/lgmonitor.jpg',
+    description:
+      'The UltraWide QHD screen (3440x1440 resolution, 21:9 aspect ratio) is great for work. This allows for monitoring of large amounts of footage for video editing, and numerous audio plugins and effects can be displayed at once.',
+    brand: 'LG',
+    category: 'Electronics',
+    price: 649.99,
+    countInStock: 4,
+    rating: 0,
+    numReviews: 0,
+  },
+  {
+    name: 'Sony Alpha 7C Full-Frame Mirrorless Camera ',
+    image: '/images/sonycamera.jpg',
+    description:
+      'Long Description: Sony Alpha 7C – world’s smallest and lightest Full Frame Compact Mirrorless Interchangeable Lens Camera with 24.2MP1 backside illuminated sensor, 4K video, side flip-out LCD and 5-axis in-body image stabilization - ILCE7C Body',
+    brand: 'Sony',
+    category: 'Electronics',
+    price: 2399.99,
+    countInStock: 10,
+    rating: 0,
+    numReviews: 0,
+  },
 ];
 
 export default products;
