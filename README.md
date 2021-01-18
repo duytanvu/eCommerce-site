@@ -2,7 +2,7 @@
 
 ***
 
-### Here is the [Live Demo Link](https://johntanvu-ecommerce.herokuapp.com/).
+### Here is the [Live Demo](https://johntanvu-ecommerce.herokuapp.com/).
 
 ***
 
